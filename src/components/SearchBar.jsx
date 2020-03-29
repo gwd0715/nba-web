@@ -4,6 +4,7 @@ import { AutoComplete, Input } from 'antd';
 import { PROFILE_PIC_URL_PREFIX } from '../constants';
 
 const SearchBar = props => {
+	//set hooks
 	const [options, setOptions] = useState([]);
 
 	const handleSearch = name => {
