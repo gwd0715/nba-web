@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Profile from './Profile';
 import nba from '../nba-client';
 import DataViewContainer from './DataViewContainer';
+import SearchBar from './SearchBar';
 
 const MainBody = () => {
 	console.log('main body');
@@ -27,10 +28,16 @@ const MainBody = () => {
 			.catch(e => console.log(e));
 	}, [playerInfo.playerName]);
 
+	const handleSelectPlayer = name => {
+		setPlayerInfo({ ...playerInfo, playerName: name });
+	};
 	return (
 		<div className="main">
-			<Profile playerInfo={playerInfo} />
-			<DataViewContainer playerId={playerInfo.playerId} />
+			<SearchBar handleSelectPlayer={handleSelectPlayer} />
+			<div className="player">
+				<Profile playerInfo={playerInfo} />
+				<DataViewContainer playerId={playerInfo.playerId} />
+			</div>
 		</div>
 	);
 };
