@@ -5,7 +5,6 @@ import DataViewContainer from './DataViewContainer';
 import SearchBar from './SearchBar';
 
 const MainBody = () => {
-  console.log('main body');
   const [playerInfo, setPlayerInfo] = useState({
     playerId: 201939,
     playerName: 'Stephen Curry'
@@ -22,7 +21,6 @@ const MainBody = () => {
           info.commonPlayerInfo[0],
           info.playerHeadlineStats[0]
         );
-        console.log(playInfo);
         setPlayerInfo(playInfo);
       })
       .catch(e => console.log(e));

@@ -7,11 +7,9 @@ export default {
   stats: {
     ...nba.stats,
     playerInfo: ({ PlayerID }) => {
-      console.log('playerInfo:' + PlayerID);
       return fetch(`${SERVER_URL}/players/${PlayerID}`).then(res => res.json());
     },
     shots: ({ PlayerID }) => {
-      console.log('shots:' + PlayerID);
       return fetch(`${SERVER_URL}/players/${PlayerID}/shots`).then(res =>
         res.json()
       );

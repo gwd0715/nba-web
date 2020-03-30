@@ -27,7 +27,6 @@ const SearchBar = props => {
   };
 
   const onSelect = name => {
-    console.log(name);
     props.handleSelectPlayer(name);
   };
 
